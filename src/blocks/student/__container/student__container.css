@@ -1,0 +1,7 @@
+.student__container{
+    display: grid;
+    border-top: 1px solid black;
+    padding-top: 66px;
+    grid-template-columns: min-content minmax(min-content, max-content);
+    margin-bottom: 101px;
+}

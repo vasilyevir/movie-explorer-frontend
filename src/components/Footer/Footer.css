@@ -1,0 +1,5 @@
+@import '../../blocks/footer/footer.css';
+@import '../../blocks/footer/__container-links/footer__container-links.css';
+@import '../../blocks/footer/__container/footer__container.css';
+@import '../../blocks/footer/__header/footer__header.css';
+@import '../../blocks/footer/__links/footer__links.css';

@@ -1,0 +1,9 @@
+.technology__paragraph{
+    margin: 0 auto 100px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    font-style: normal;
+    text-align: center;
+    max-width: 460px;
+}

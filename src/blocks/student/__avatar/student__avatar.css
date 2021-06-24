@@ -1,0 +1,10 @@
+.student__avatar{
+    width: 270px;
+    height: 327px;
+    grid-column-start: 3;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    grid-row-end: span 6;
+    border-radius: 10px;
+    justify-self: end;
+}

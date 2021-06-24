@@ -1,0 +1,7 @@
+.header__nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 183px;
+    margin: auto 70px;
+}

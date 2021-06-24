@@ -1,0 +1,28 @@
+.search-form__visible-checkbox{
+    width: 36px;
+    height: 20px;
+    background-color: #ebebeb;
+    position: relative;
+    border-radius: 20px;
+    left: -20px;
+    z-index: 0;
+}
+
+/* .search-form__checkbox:checked + .search-form__visible-checkbox {
+    justify-content: flex-end;
+    align-items: end;
+    background-color: #2BE080;
+}
+
+.search-form__checkbox:disabled + .search-form__visible-checkbox{
+    justify-content: start;
+    align-items: center;
+} */
+
+/* .search-form__checkbox:disabled:checked + .search-form__visible-checkbox{
+
+} */
+
+/* .search-form__checkbox:focus + .search-form__visible-checkbox{
+    box-shadow:0 0 5px #fff6c5;
+} */

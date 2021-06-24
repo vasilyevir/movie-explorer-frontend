@@ -1,0 +1,12 @@
+@import '../../blocks/search-form/search-form.css';
+@import '../../blocks/search-form/__button/search-form__button.css';
+@import '../../blocks/search-form/__checkbox/search-form__checkbox.css';
+@import '../../blocks/search-form/__find-constructor/search-form__find-constructor.css';
+@import '../../blocks/search-form/__form/search-form__form.css';
+@import '../../blocks/search-form/__input/search-form__input.css';
+@import '../../blocks/search-form/__visible-checkbox/search-form__visible-checkbox.css';
+@import '../../blocks/search-form/__label/search-form__label.css';
+@import '../../blocks/search-form/__checkbox-round/search-form__checkbox-round.css';
+@import '../../blocks/search-form/__checkbox-text/search-form__checkbox-text.css';
+@import '../../blocks/movies-cardlist/movies-cardlist.css';
+@import '../../blocks/movies-cardlist/__button/movies-cardlist__button.css';

@@ -1,0 +1,6 @@
+.movies-cardlist{
+    width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}

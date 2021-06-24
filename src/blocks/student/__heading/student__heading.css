@@ -1,0 +1,8 @@
+.student__heading{
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    margin: 0;
+    font-size: 50px;
+    line-height: 58px;
+    font-weight: 400;
+}

@@ -1,0 +1,10 @@
+.footer__links{
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 400;
+    margin-right: 20px;
+}
+
+.footer__links:last-of-type{
+    margin-right: 0;
+}

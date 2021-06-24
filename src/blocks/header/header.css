@@ -1,0 +1,10 @@
+.header{
+    width: 100vw;
+    height: 74px;
+    width: 1140px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #F3C1F8;
+    margin: auto;
+}

@@ -1,0 +1,12 @@
+@import '../../blocks/profile/profile.css';
+@import '../../blocks/profile/__button/profile__button.css';
+@import '../../blocks/profile/__button/_register/profile__button_register.css';
+@import '../../blocks/profile/__constructor/profile__constructor.css';
+@import '../../blocks/profile/__error/login__error.css';
+@import '../../blocks/profile/__form/profile__form.css';
+@import '../../blocks/profile/__head/profile__head.css';
+@import '../../blocks/profile/__input/profile__input.css';
+@import '../../blocks/profile/__logo/profile__logo.css';
+@import '../../blocks/profile/__question/profile__question.css';
+@import '../../blocks/profile/__redirection/profile__redirection.css';
+@import '../../blocks/profile/__signature/profile__signature.css';

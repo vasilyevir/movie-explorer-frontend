@@ -1,0 +1,12 @@
+.student__block-site{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1140px;
+    border-bottom: 1px solid rgba(232, 232, 232, 1);
+}
+
+.student__block-site:last-of-type{
+    border-bottom: none;
+    margin-bottom: 125px;
+}
