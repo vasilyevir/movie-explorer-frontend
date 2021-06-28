@@ -1,6 +1,7 @@
 .movies-cardlist__button{
     margin: 50px auto 80px;
-    width: 320px;
+    max-width: 320px;
+    width: 90%;
     height: 36px;
     background-color: #e8e8e8;
     font-weight: 500;

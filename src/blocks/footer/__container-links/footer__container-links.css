@@ -3,3 +3,10 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+@media(max-width:420px){
+    .footer__container-links{
+        flex-direction: column;
+        align-items: center;
+    }
+}

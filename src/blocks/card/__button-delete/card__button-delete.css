@@ -12,3 +12,9 @@
 .card__button-delete:hover{
     background-image: url(../../../images/delete.svg);
 }
+
+@media(max-width:1000px){
+    .card__button-delete{
+        background-image: url(../../../images/delete.svg);
+    }
+}

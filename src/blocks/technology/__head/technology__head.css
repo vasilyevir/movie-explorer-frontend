@@ -3,5 +3,10 @@
     font-weight: 400;
     font-size: 22px;
     line-height: 27px;
-    width: 1140px;
+}
+
+@media(max-width:520px){
+    .technology__head{
+        margin: 0 auto 28px;
+    }
 }

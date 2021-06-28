@@ -2,4 +2,13 @@
     background-color: black;
     color: #ffffff;
     text-align: center;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+@media(max-width: 520px){
+    .about__time-line{
+        font-size: 11px;
+        line-height: 13px;
+    }
 }

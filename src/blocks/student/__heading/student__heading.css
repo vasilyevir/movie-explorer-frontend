@@ -6,3 +6,9 @@
     line-height: 58px;
     font-weight: 400;
 }
+
+@media(max-width: 642px){
+    .student__heading{
+        margin-top: 40px;
+    }
+}

@@ -3,8 +3,25 @@
     line-height: 16px;
     font-weight: 400;
     margin-right: 20px;
+    text-decoration: none;
+    color: black;
+    align-self: center;
 }
 
 .footer__links:last-of-type{
     margin-right: 0;
+}
+
+@media(max-width:420px){
+    .footer__links{
+        margin: 12px 0 0;
+    }
+
+    .footer__links:first-of-type{
+        margin-top: 30px;
+    }
+
+    .footer__links:last-of-type{
+        margin-bottom: 30px;
+    }
 }

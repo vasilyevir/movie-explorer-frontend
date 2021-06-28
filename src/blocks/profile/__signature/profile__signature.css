@@ -3,6 +3,6 @@
     font-weight: 400;
     line-height: 13px;
     color: #000000;
-    width: 140px;
+    max-width: 140px;
     margin-right: 10px;
 }

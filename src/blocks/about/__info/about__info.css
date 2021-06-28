@@ -1,7 +1,15 @@
 .about__info{
     border-top: 1px solid #000000;
     display: grid;
-    grid-template-columns: 550px 550px;
+    grid-template-columns: repeat(2, 1fr);
     gap: 40px 26px;
     margin-bottom: 110px;
+}
+@media(max-width: 520px){
+    .about__info{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 60px;
+    }
 }

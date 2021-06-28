@@ -22,6 +22,7 @@ function Profile() {
                             </div>
                         </Link>
                     </div>
+                    <button className="header__btn-popup"></button>
                 </Header>
                 <section className='profile'>
                     <h1 className='profile__head'>Привет, Илья</h1>

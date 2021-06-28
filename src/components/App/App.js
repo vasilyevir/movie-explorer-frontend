@@ -30,10 +30,10 @@ function App() {
         <Route path='/profile'>
           <Profile/>
         </Route>
+        <Route path="*">
+          <NotFounded/>
+        </Route>
       </Switch>
-      <Route path="*">
-        <NotFounded/>
-      </Route>
     </div>
   );
 }

@@ -113,18 +113,19 @@ function Movies() {
                         <Link to='/movies' className="header__links">Фильмы</Link>
                         <Link to='/saved-movies' className="header__links">Сохранённые фильмы</Link>
                     </div>
-                    <Link to='/saved-movies' className="header__account">
+                    <Link to='/profile' className="header__account">
                         <p className="header__account-text">Аккаунт</p>
                         <div className="header__account-logo">
                             <img src={Avatar} alt='account logo' className="header__logo-man"/>
                         </div>
                     </Link>
                 </div>
+                <button className="header__btn-popup"></button>
             </Header>
             <section className="search-form">
                 <form className="search-form__form">
                     <div className="search-form__find-constructor">
-                        <input placeholder="Фильм" className="search-form__input"></input>
+                        <input placeholder="Фильм" required className="search-form__input"></input>
                         <button className="search-form__button">Найти</button>
                     </div>
                     <label className="search-form__label">
@@ -149,11 +150,12 @@ function Movies() {
                     />
                 )
                 )}
-                <button className="movies-cardlist__button">Ещё</button>
             </section>
+            <button className="movies-cardlist__button">Ещё</button>
             <Footer/>
         </>
     )
 }
+
 
 export default Movies;

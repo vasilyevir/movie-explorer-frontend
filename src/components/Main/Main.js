@@ -25,17 +25,17 @@ function Main() {
             </div>
             <div className="navbar">
                 <div className="navbar__links">
-                    <Link className="navbar__link">О проекте</Link>
-                    <Link className="navbar__link">Технологии</Link>
-                    <Link className="navbar__link">Студент</Link>
+                    <Link to="#about" className="navbar__link">О проекте</Link>
+                    <Link to="#technology" className="navbar__link">Технологии</Link>
+                    <Link to="#student" className="navbar__link">Студент</Link>
                 </div>
             </div>
-            <div className="about">
+            <div id="about" className="about">
                 <h2 className="about__head">О проекте</h2>
                 <div className="about__info">
                     <div className="about__heading">Дипломный проект включал 5 этапов</div>
-                    <div className="about__heading">На выполнение диплома ушло 5 недель</div>
                     <div className="about__paragraphs">Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</div>
+                    <div className="about__heading">На выполнение диплома ушло 5 недель</div>
                     <div className="about__paragraphs">У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</div>
                 </div>
                 <div className="about__time">
@@ -45,7 +45,7 @@ function Main() {
                     <div className="about__time-text">Front-end</div>
                 </div>
             </div>
-            <div className="technology">
+            <div id="technology" className="technology">
                 <div className="technology__container">    
                     <h2 className="technology__head">Технологии</h2>
                     <div className="technology__info">
@@ -63,30 +63,30 @@ function Main() {
                     </div>
                 </div>
             </div>
-            <div className="student">
+            <div name="student" className="student">
                 <h2 className="student__head">Студент</h2>
                 <div className="student__container">
                     <img src={Avatar} alt="Аватар" className="student__avatar"/>
                     <h2 className="student__heading">Илья</h2>
                     <h3 className="student__profile">Фронтенд-разработчик, 20 лет</h3>
                     <p className="student__about-me">Я родился и живу в Санкт-Петербурге, учусь на робототехнике и мехатронике в СПбПУ. Занимался легкой атлетикой и добился там серьзных результатов, несколько раз был призером первенства России. Недавно начал кодить. После того, как прошёл курс по веб-разработке, хочу добиться высоких результатов и в данной сфере.</p>
-                    <div className="student__link">Vkontakte</div>
-                    <div className="student__link">Github</div>
+                    <a href="https://vk.com/vas.il400mh" className="student__link">Vkontakte</a>
+                    <a href="https://github.com/vasilyevir" className="student__link">Github</a>
                 </div>
                 <div className="student__portfolio">
                     <h3 className="student__profile student__profile_portfolio">Портфолио</h3>
-                    <div className="student__block-site">
+                    <a href="https://github.com/vasilyevir/how-to-learn/blob/master/index.html" className="student__block-site">
                         <p className="student__text-site">Статичный сайт</p>
                         <img src={Arrow} alt="Стрелка" className="student__arrow"/>
-                    </div>
-                    <div className="student__block-site">
-                        <p className="student__text-site">Статичный сайт</p>
+                    </a>
+                    <a href="https://github.com/vasilyevir/russian-travel" className="student__block-site">
+                        <p className="student__text-site">Адаптивный сайт</p>
                         <img src={Arrow} alt="Стрелка" className="student__arrow"/>
-                    </div>
-                    <div className="student__block-site">
+                    </a>
+                    <a href="https://github.com/vasilyevir/react-mesto-api-full" className="student__block-site">
                         <p className="student__text-site">Одностраничное приложение</p>
                         <img src={Arrow} alt="Стрелка" className="student__arrow"/>
-                    </div>
+                    </a>
                 </div>
             </div>
             <Footer/>

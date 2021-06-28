@@ -1,5 +1,6 @@
 .search-form__input{
-    width: 1014px;
+    max-width: 1014px;
+    width: 80%;
     height: 18px;
     background-color: rgba(249, 249, 249, 1);
     border: none;
@@ -7,4 +8,11 @@
     font-size: 14px;
     padding: 15px 22px;
     font-weight: 400;
+    margin-right: 10px;
+}
+@media(max-width:520px){
+    .search-form__input{
+        font-size: 12px;
+        line-height: 18px;
+    }
 }

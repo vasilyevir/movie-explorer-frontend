@@ -6,3 +6,10 @@
     font-style: normal;
     text-align: center;
 }
+
+@media(max-width:520px){
+    .technology__header{
+        font-size: 30px;
+        line-height: 36px;
+    }
+}

@@ -2,11 +2,15 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 1140px;
+    max-width: 1140px;
     border-bottom: 1px solid rgba(232, 232, 232, 1);
+    text-decoration: none;
+    color: black;
 }
 
 .student__block-site:last-of-type{
     border-bottom: none;
     margin-bottom: 125px;
 }
+
+/* @media(max-width:) */

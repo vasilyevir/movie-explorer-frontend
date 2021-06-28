@@ -7,3 +7,17 @@
     text-align: center;
     max-width: 460px;
 }
+
+@media(max-width:768px){
+    .technology__paragraph{
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+@media(max-width:520px){
+    .technology__paragraph{
+        font-size: 11px;
+        line-height: 16px;
+    }
+}

@@ -4,8 +4,6 @@ import './Login.css'
 
 function Login() {
 
-    
-    
     return (
         <section className='login'>
             <Link to='/'>

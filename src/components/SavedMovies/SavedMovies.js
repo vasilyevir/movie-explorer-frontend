@@ -42,11 +42,12 @@ function SavedMovies() {
                         </div>
                     </Link>
                 </div>
+                <button className="header__btn-popup"></button>
             </Header>
             <section className="search-form">
                 <form className="search-form__form">
                     <div className="search-form__find-constructor">
-                        <input placeholder="Фильм" className="search-form__input"></input>
+                        <input placeholder="Фильм" required className="search-form__input"></input>
                         <button className="search-form__button">Найти</button>
                     </div>
                     <label className="search-form__label">

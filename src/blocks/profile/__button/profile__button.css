@@ -1,6 +1,7 @@
 .profile__button{
     margin-top: 69px;
-    width: 396px;
+    max-width: 396px;
+    width: 100%;
     height: 45px;
     font-size: 13px;
     line-height: 16px;

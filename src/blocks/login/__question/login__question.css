@@ -5,3 +5,10 @@
     color: #a0a0a0;
     text-align: center;
 }
+
+@media(max-width: 360px){
+    .login__question{
+        font-size: 12px;
+        line-height: 15px;
+    }
+}

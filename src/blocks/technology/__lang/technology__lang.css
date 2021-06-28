@@ -12,3 +12,12 @@
     align-items: center;
     justify-content: center;
 }
+
+@media(max-width:768px){
+    .technology__lang{
+        width: 84px;
+        height: 57px;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+}
