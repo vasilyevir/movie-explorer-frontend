@@ -1,0 +1,12 @@
+@import '../../blocks/login/login.css';
+@import '../../blocks/login/__logo/login__logo.css';
+@import '../../blocks/login/__head/login__head.css';
+@import '../../blocks/login/__button/login__button.css';
+@import '../../blocks/login/__constructor/login__constructor.css';
+@import '../../blocks/login/__error/login__error.css';
+@import '../../blocks/login/__form/login__form.css';
+@import '../../blocks/login/__input/login__input.css';
+@import '../../blocks/login/__signature/login__signature.css';
+@import '../../blocks/login/__question/login__question.css';
+@import '../../blocks/login/__redirection/login__redirection.css';
+@import '../../blocks/login/__button/_register/login__button_register.css';

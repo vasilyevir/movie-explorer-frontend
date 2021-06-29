@@ -1,0 +1,35 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 270px;
+    height: 230px;
+    margin-right: 20px;
+    margin-bottom: 38px;
+}
+.card:nth-of-type(4n){
+    margin-right: 0;
+}
+
+@media(max-width:1266px){
+    .card:nth-of-type(4n){
+        margin-right: 20px;
+    }
+    .card:nth-of-type(3n){
+        margin-right: 0;
+    }
+}
+
+@media(max-width:944px){
+    .card:nth-of-type(3n){
+        margin-right: 20px;
+    }
+    .card:nth-of-type(2n){
+        margin-right: 0;
+    }
+}
+
+@media(max-width:622px){
+    .card{
+        margin-right: 0;
+    }
+}

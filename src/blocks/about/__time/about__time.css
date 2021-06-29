@@ -1,0 +1,8 @@
+.about__time{
+    display: grid;
+    grid-template-columns: minmax(100px, 20%) minmax(184px, 80%);
+    grid-template-rows: 36px 17px;
+    gap: 14px 0px;
+    margin-bottom: 110px;
+    width: 100%;
+}

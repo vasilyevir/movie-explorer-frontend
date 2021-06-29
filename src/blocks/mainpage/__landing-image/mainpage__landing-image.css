@@ -1,0 +1,9 @@
+.mainpage__landing-image{
+    background-image: url(../../../images/landing-logo.png);
+    background-repeat: no-repeat;
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
+    position: relative;
+    top: 82px;
+}

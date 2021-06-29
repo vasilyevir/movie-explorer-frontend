@@ -1,0 +1,9 @@
+@import '../../blocks/card/card.css';
+@import '../../blocks/card/__button-like/card__button-like.css';
+@import '../../blocks/card/__film-length/card__film-length.css';
+@import '../../blocks/card/__image/card__image.css';
+@import '../../blocks/card/__name/card__name.css';
+@import '../../blocks/card/__underline/card__underline.css';
+@import '../../blocks/card/__button-like/_isLiked/card__button-like_is-liked.css';
+@import '../../blocks/card/__constructor-time/card__constructor-time.css';
+@import '../../blocks/card/__button-delete/card__button-delete.css';

@@ -1,0 +1,25 @@
+.about__paragraphs{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: start;
+    padding: 0;
+    margin-bottom: 10px;
+    grid-row-start: 2;
+}
+
+@media(max-width: 800px){
+    .about__paragraphs{
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+@media(max-width: 520px){
+    .about__paragraphs{
+        line-height: 16px;
+        font-size: 11px;
+        margin-top: 16px;
+        margin-bottom: 0;
+    }
+}

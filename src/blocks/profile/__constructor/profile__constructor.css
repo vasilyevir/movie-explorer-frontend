@@ -1,0 +1,18 @@
+.profile__constructor{
+    display: flex;
+    flex-direction: row;
+    height: 46px;
+    border-bottom: 1px solid #e8e8e8;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.profile__constructor:last-of-type{
+    border-bottom: none;
+}
+
+.profile__constructor:first-of-type{
+    margin-top: 109px;
+}

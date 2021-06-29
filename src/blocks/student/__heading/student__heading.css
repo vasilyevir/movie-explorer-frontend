@@ -1,0 +1,14 @@
+.student__heading{
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    margin: 0;
+    font-size: 50px;
+    line-height: 58px;
+    font-weight: 400;
+}
+
+@media(max-width: 642px){
+    .student__heading{
+        margin-top: 40px;
+    }
+}

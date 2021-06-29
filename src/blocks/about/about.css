@@ -1,0 +1,17 @@
+.about{
+    max-width: 1140px;
+    width: 90%;
+    margin: 110px auto 0px;
+}
+
+@media (max-width: 768px){
+    .about{
+        margin: 90px auto 0;
+    }
+}
+
+@media (max-width: 450px){
+    .about{
+        margin: 70px auto 0;
+    }
+}

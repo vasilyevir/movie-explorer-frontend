@@ -1,0 +1,11 @@
+.header{
+    max-width: 1140px;
+    width: 90%;
+    height: 74px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #F3C1F8;
+    margin: 0 auto;
+    align-items: center;
+}
