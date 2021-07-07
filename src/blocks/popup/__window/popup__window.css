@@ -1,0 +1,11 @@
+    .popup__window{
+        position: absolute;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        right: 0;
+        height: 100%;
+        max-width: 520px;
+        width: 100%;
+        align-items: center;
+    }

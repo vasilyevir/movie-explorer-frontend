@@ -1,0 +1,14 @@
+.popup__list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+    height: 90vh;
+}
+
+@media (max-width: 540px){
+    .popup__list{
+        width: 100%;
+    }
+}

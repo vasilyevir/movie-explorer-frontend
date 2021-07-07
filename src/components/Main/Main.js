@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import Avatar from '../../images/Avatar.jpeg';
 import Arrow from '../../images/arrow.svg'
 
-function Main() {
+function Main(props) {
     
     return (
         <>
@@ -14,8 +14,8 @@ function Main() {
                     header = {true}
                 >
                     <div className="header__nav-bar">
-                        <Link className="header__register" to='/signup'>Регистрация</Link>
-                        <Link className="header__login" to='/signin'>Войти</Link>
+                        <Link className="header__register" to={props.loggedIn ? '/signup' : '/movies'}>Регистрация</Link>
+                        <Link className="header__login" to={ props.loggedIn ? '/signin' : '/movies'}>Войти</Link>
                     </div>
                 </Header>
                 <div className="mainpage__landing">

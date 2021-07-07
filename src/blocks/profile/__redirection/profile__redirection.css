@@ -3,5 +3,7 @@
     font-weight: 400;
     line-height: 16px;
     color: #FF4062;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
     /* align-self: center; */
 }

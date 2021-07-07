@@ -1,0 +1,6 @@
+.popup__nav-link{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    margin-top: 105px;
+}
