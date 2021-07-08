@@ -373,6 +373,9 @@ const increaseQuantityCheck = () => {
             <Route path="*">
               <NotFounded/>
             </Route>
+            <Route>
+                {loggedIn ? <Redirect to="/movies" /> : <Redirect to="/" />}
+            </Route>
           </Switch>
         </CurrentMoviesContext.Provider>
       </CurrentUserContext.Provider>
