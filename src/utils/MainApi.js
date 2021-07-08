@@ -149,7 +149,7 @@ class Api{
 }
 
 const config = {
-    address: `http://localhost:3005`
+    address: `https://api.vasilyevir-movies.nomoredomains.icu`
 }
 
 const api = new Api(config);
