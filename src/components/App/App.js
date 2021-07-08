@@ -112,7 +112,6 @@ function App() {
     console.log(password, email)
     return api.authorize(password, email)
       .then((data) => {
-        document.location.reload();
         if (!data) throw new Error('Неверные имя пользователя или пароль')
         if (data.token) {
           setLoggedIn(true)
