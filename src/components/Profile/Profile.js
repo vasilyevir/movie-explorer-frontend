@@ -1,37 +1,23 @@
 import {Link} from 'react-router-dom';
 import Header from '../Header/Header'
 import Avatar from '../../images/account.svg'
-import {useState} from 'react';
+import {useState, useContext} from 'react';
+import {useFormWithValidationProfile} from '../UseForm/UseForm';
 import './Profile.css'
+import CurrentUserContext from '../../contexts/CurrentUserContext';
 
 function Profile(props) {
-
-    const [userData, setUserData] = useState({
-        name: `${props.infoUser.name}`,
-        email: `${props.infoUser.email}`,
-        emailChanged: true
-      })
-    const [message, setMessage] = useState('');
+    const currentUser = useContext(CurrentUserContext);
+    const checkForm = useFormWithValidationProfile(currentUser);
 
     const handleChange = (e) => {
-    const { name, value } = e.target;
-    setUserData({
-        ...userData,
-        [name]: value
-    })
+        checkForm.handleChange(e);
     }
 
     const handleSubmit = (e) => {
-        if (props.infoUser.email === userData.email){
-            setUserData({
-                ...userData,
-                emailChanged: false
-            })
-        }
-        console.log(userData)
         e.preventDefault();
-        props.update(userData)
-        .catch(err => setMessage(err.message || 'Что-то пошло не так'));
+        const emailChanged = currentUser.email === checkForm.values ? false : true;
+        props.update(checkForm.values, emailChanged)
     }
     
     return (
@@ -78,13 +64,16 @@ function Profile(props) {
                     <form className="profile__form" onSubmit={handleSubmit}>
                         <div className="profile__constructor">
                             <p className="profile__signature">Имя</p>
-                            <input required minLength="2" maxLength="40" type="text" className="profile__input" id="name" onChange={handleChange} value={userData.name} name="name"/>
+                            <input required minLength="2" maxLength="40" type="text" className="profile__input" id="name" onChange={handleChange} value={checkForm.values.name} name="name"/>
                         </div>
+                        <span id="name-error" className="login__error">{checkForm.errors.name}</span>
                         <div className="profile__constructor">
                             <p className="profile__signature">E-mail</p>
-                            <input required minLength="2" maxLength="40" type="email" className="profile__input" id="name" onChange={handleChange} value={userData.email} name="email"/>
+                            <input required minLength="2" maxLength="40" type="email" className="profile__input" id="name" onChange={handleChange} value={checkForm.values.email} name="email"/>
                         </div>
-                            <button className="profile__button profile__button_register">Редактировать</button>
+                        <span id="name-error" className="login__error">{checkForm.errors.email}</span>
+                        <span id="name-error" className="login__error">{props.message}</span>
+                        <button className="profile__button profile__button_register">Редактировать</button>
                     </form>
                     <button className="profile__redirection" onClick={props.signOut} to='/signup'>Выйти из аккаунта</button>
                 </section>

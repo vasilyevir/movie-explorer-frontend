@@ -94,11 +94,19 @@ function App() {
 
   const handleMenuButtonClick = () =>{        
     isPopupOpen();
-}
+  }
 
-const isPopupOpen = () =>{
-  setIsOpen(true);
-}
+  const isPopupOpen = () =>{
+    setIsOpen(true);
+  }
+
+  const checkLoginError = (err) => {
+    if (err === 'Ошибка: 401'){
+      setMessage('Вы ввели неправильный логин или пароль.');
+    } else {
+      setMessage('При авторизации произошла ошибка. Токен не передан или передан не в том формате');
+    }
+  }
 
   const handleLogin = ({ password, email  }) => {
     console.log(password, email)
@@ -137,8 +145,16 @@ const isPopupOpen = () =>{
         }
       })
       .catch((err) => 
-          console.log(err)
+          checkLoginError(err)
         )
+  }
+
+  const checkRegisterError = (err) => {
+    if (err === 'Ошибка: 409'){
+      setMessage('Пользователь с таким email уже существует');
+    } else {
+      setMessage('При регистрации пользователя произошла ошибка.');
+    }
   }
 
   const handleRegister = ({ name, email, password  }) => {
@@ -149,7 +165,7 @@ const isPopupOpen = () =>{
         return res;
       })
       .catch((err) => 
-          setMessage(err)
+          checkRegisterError(err)
         )
   }
 
@@ -205,13 +221,21 @@ const isPopupOpen = () =>{
     }
   }
 
-  const updateProfile = (obj) => {
-    console.log(obj)
+  const checkUpdateProfileError = (err) => {
+    if (err === 'Ошибка: 409'){
+      setMessage('Пользователь с таким email уже существует.');
+    } else {
+      setMessage('При обновлении профиля произошла ошибка.');
+    }
+  }
+
+  const updateProfile = (obj, emailChanged) => {
+    obj.emailChanged = emailChanged;
     return api.changeProfile(obj)
       .then(data =>{
-        console.log(data);
+        setCurrentUser(data);
       })
-    .catch(err => console.log(err))
+    .catch(err => checkUpdateProfileError(err))
   }
  
   function handleMovieLike(card) {
@@ -300,6 +324,7 @@ const increaseQuantityCheck = () => {
             <Route path='/signin'>
               <Login
                 onLogin={handleLogin}
+                message={message}
               />
             </Route>
             <Route path='/signup'>
@@ -343,6 +368,7 @@ const increaseQuantityCheck = () => {
               closeAllPopups={closeAllPopups}
               handleMenuButtonClick={handleMenuButtonClick}
               isOpen={isOpen}
+              message={message}
             />
             <Route path="*">
               <NotFounded/>

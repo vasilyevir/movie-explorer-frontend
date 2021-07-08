@@ -1,29 +1,30 @@
 import {Link} from 'react-router-dom';
 import Logo from '../../images/logo.svg';
-import {useState} from 'react';
+// import {useState} from 'react';
+import {useForm, useFormWithValidation} from '../UseForm/UseForm';
 import './Login.css'
 
 function Login(props) {
 
-    const [userData, setUserData] = useState({
-        email: '',
-        password: ''
-      })
-    const [message, setMessage] = useState('');
+    // const [userData, setUserData] = useState({
+    //     email: '',
+    //     password: ''
+    //   })
+    // const [message, setMessage] = useState('');
+
+    const formData = useForm();
+    const checkForm = useFormWithValidation();
 
     const handleChange = (e) => {
-    const { name, value } = e.target;
-    setUserData({
-        ...userData,
-        [name]: value
-    })
+        formData.handleChange(e);
+        checkForm.handleChange(e);
     }
-
+    console.log(checkForm)
     const handleSubmit = (e) => {
-        console.log(userData)
+        // console.log(userData)
         e.preventDefault();
-        props.onLogin(userData)
-        .catch(err => setMessage(err.message || 'Что-то пошло не так'));
+        props.onLogin(formData.values)
+        // .catch(err => setMessage(err.message || 'Что-то пошло не так'));
     }
 
     return (
@@ -35,14 +36,15 @@ function Login(props) {
             <form className="login__form" onSubmit={handleSubmit}>
                 <div className="login__constructor">
                     <p className="login__signature">E-mail</p>
-                    <input required minLength="2" maxLength="40" type="text" className="login__input" id="name" onChange={handleChange} value={userData.email} name="email"/>
-                    <span id="name-error" className="login__error"></span>
+                    <input required type="email" className="login__input" id="name" onChange={handleChange} value={formData.values.email} name="email"/>
+                    <span id="name-error" className="login__error">{checkForm.errors.email}</span>
                 </div>
                 <div className="login__constructor">
                     <p className="login__signature">Пароль</p>
-                    <input type="password" className="login__input" id="name" onChange={handleChange} value={userData.password} name="password"/>
-                    <span id="name-error" className="login__error"></span>
+                    <input type="password" minLength="8" className="login__input" id="name" onChange={handleChange} value={formData.values.password} name="password"/>
+                    <span id="name-error" className="login__error">{checkForm.errors.password}</span>
                 </div>
+                <p className="login__error">{props.message}</p>
                 <button className="login__button login__button_register">Войти</button>
             </form>
             <p className="login__question">

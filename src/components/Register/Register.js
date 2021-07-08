@@ -1,35 +1,24 @@
 import {Link} from 'react-router-dom';
 import Logo from '../../images/logo.svg'
-// import {useForm} from '../UseForm/UseForm';
 import {useState} from 'react';
 import './Register.css'
+import {useForm, useFormWithValidation} from '../UseForm/UseForm';
 
 function Register(props) {
-
-    console.log(props.message)
-    const [userData, setUserData] = useState({
-        name: '',
-        email: '',
-        password: '',
-    })
-    const message = props.message === 'Ошибка: 409' ? 'Пользователь с таким email уже существует' : (userData.name && userData.email && userData.password) ? 'При регистрации пользователя произошла ошибка.' :'';
-
-
+    const formData = useForm();
+    const checkForm = useFormWithValidation();
+    
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setUserData({
-            ...userData,
-            [name]: value
-        });
+        formData.handleChange(e);
+        checkForm.handleChange(e);
     }
 
+
+
     const handleSubmit = (e) => {
-        let {name, password, email } = userData;
-        console.log(userData, 'handleSumbit')
         e.preventDefault();
-        props.onRegister({  name, password, email })
+        props.onRegister(formData.values)
     }  
-    
 
     return (
         <section className='login'>
@@ -40,19 +29,20 @@ function Register(props) {
             <form className="login__form" onSubmit={handleSubmit}>
                 <div className="login__constructor">
                     <p className="login__signature">Имя</p>
-                    <input required minLength="2" maxLength="40" type="text" className="login__input" id="name" value={userData.name} onChange={handleChange} name="name"/>
-                    <span id="name-error" className="login__error"></span>
+                    <input required minLength="2" maxLength="40" type="text" className="login__input" id="name" value={formData.values.name} onChange={handleChange} name="name"/>
+                    <span id="name-error" className="login__error">{checkForm.errors.name}</span>
                 </div>
                 <div className="login__constructor">
                     <p className="login__signature">E-mail</p>
-                    <input required minLength="2" maxLength="40" type="email" className="login__input" id="email" value={userData.email} onChange={handleChange} name="email"/>
-                    <span id="name-error" className="login__error"></span>
+                    <input required minLength="2" maxLength="40" type="email" className="login__input" id="email" value={formData.values.email} onChange={handleChange} name="email"/>
+                    <span id="name-error" className="login__error">{checkForm.errors.email}</span>
                 </div>
                 <div className="login__constructor">
                     <p className="login__signature">Пароль</p>
-                    <input required minLength="8" type="password" className="login__input" id="password" value={userData.password} onChange={handleChange} name="password"/>
-                    <span id="name-error" className="login__error">{message}</span>
+                    <input required minLength="8" type="password" className="login__input" id="password" value={formData.values.password} onChange={handleChange} name="password"/>
+                    <span id="name-error" className="login__error">{checkForm.errors.password}</span>
                 </div>
+                <p className="login__error">{props.message}</p>
                 <button className="login__button">Зарегистрироваться</button>
             </form>
             <p className="login__question">

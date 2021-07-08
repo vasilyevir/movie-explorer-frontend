@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Card.css';
 
 
@@ -98,18 +99,18 @@ function Card(props) {
     const handleCardLike = () => {
         props.like(props.films)
         .catch(err => console.log(err));
-        console.log(props.films)
     }
 
     const handleCardDeleteLike = () => {
-        console.log(props.films)
         props.deleteLike(props.films._id)
     }
 
 
     return (
         <div className={movieShow ? "card" : "card card_invisible"}>
-            <img src={props.films.image} alt={props.films.nameRU} className="card__image"/>
+            <a href={props.films.trailer}>
+                <img src={props.films.image} alt={props.films.nameRU} className="card__image"/>
+            </a>
             <div className="card__underline">
                 <p className="card__name">{props.films.nameRU}</p>
                 { 
