@@ -1,13 +1,12 @@
 class Api{
     constructor(data){
         this._address = data.address;
-        this._token = `Bearer ${localStorage.getItem('token')}`;
     }
     
     getInformation(){
         return fetch(`${this._address}/users/me`, {
             headers: {
-                authorization : this._token
+                authorization : `Bearer ${localStorage.getItem('token')}`
             }
         })
         .then((res) => {
@@ -22,7 +21,7 @@ class Api{
     getMovies(){
         return fetch(`${this._address}/movies`,{
             headers: {
-                authorization : this._token
+                authorization : `Bearer ${localStorage.getItem('token')}`
             }
         })
         .then((res) => {
@@ -39,7 +38,7 @@ class Api{
         return fetch(`${this._address}/users/me`,{
             method: 'PATCH',
             headers: {
-              authorization: this._token,
+              authorization: `Bearer ${localStorage.getItem('token')}`,
               'Content-Type': 'application/json'
             },
             body: JSON.stringify({
@@ -62,7 +61,7 @@ class Api{
         return fetch(`${this._address}/movies`,{
             method: 'POST',
             headers: {
-                authorization : this._token,
+                authorization : `Bearer ${localStorage.getItem('token')}`,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
@@ -92,7 +91,7 @@ class Api{
         return fetch(`${this._address}/movies/${moviesId}`,{
             method: 'DELETE',
             headers: {
-                authorization : this._token
+                authorization : `Bearer ${localStorage.getItem('token')}`
             }
         })
         .then((res) => {
@@ -105,7 +104,6 @@ class Api{
     }
 
     authorize(password, email){
-        console.log(password, email)
         return fetch(`${this._address}/signin`, {
             method: 'POST',
             headers: {

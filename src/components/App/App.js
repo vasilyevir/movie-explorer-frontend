@@ -109,7 +109,6 @@ function App() {
   }
 
   const handleLogin = ({ password, email  }) => {
-    console.log(password, email)
     return api.authorize(password, email)
       .then((data) => {
         if (!data) throw new Error('Неверные имя пользователя или пароль')
@@ -118,7 +117,6 @@ function App() {
           localStorage.setItem('token', data.token)
           api.getMovies()
             .then(data => {
-              console.log(data.data)
               const savedMoviesList = data.data
               MoviesApi.getContent()
                 .then(data => {
@@ -126,7 +124,6 @@ function App() {
                   for(let i=0; i<data.length; i++){
                     moviesList[i] = createArrayMovies(data[i], savedMoviesList);
                   }
-                  // setCurrentMovies(moviesList);
                   determiningQuantityCard(moviesList);
                 })
                 .catch((err)=>{console.log(err)})
@@ -135,7 +132,6 @@ function App() {
 
           api.getInformation()
             .then(data => {
-              console.log(data.data);
               setCurrentUser(data.data)
             })
             .catch((err)=>{console.log(err)})
@@ -186,8 +182,6 @@ function App() {
           for(let i=0; i<item.length; i++){
             moviesList[i] = createArrayMovies(item[i], savedMoviesList);
           }
-          console.log(10)
-          // setCurrentMovies(moviesList);
           determiningQuantityCard(moviesList);
         })
         .catch((err)=>{console.log(err)})
@@ -248,7 +242,6 @@ function App() {
   }
 
   function handleMovieDeleteLike(cardId) {
-    console.log(cardId);
     return api.deleteMovies(cardId).then((newCard) => {
       console.log(newCard)
       let movies=[]

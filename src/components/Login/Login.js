@@ -19,7 +19,7 @@ function Login(props) {
         formData.handleChange(e);
         checkForm.handleChange(e);
     }
-    console.log(checkForm)
+
     const handleSubmit = (e) => {
         // console.log(userData)
         e.preventDefault();
