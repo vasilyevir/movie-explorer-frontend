@@ -3,11 +3,10 @@ import CurrentMoviesContext from '../../contexts/CurrentMoviesContext';
 import Card from '../Card/Card';
 
 function MoviesList(props) {
-    const [currentMovies, setCurrentMovies] = useContext(CurrentMoviesContext);
-
+    
     return (
         <section className="movies-cardlist">
-            {currentMovies.map((item, id)=>(
+            {props.moviesList.map((item, id)=>(
                 <Card
                     shortFilm={props.shortFilm}
                     nameFilm={props.nameFilm}

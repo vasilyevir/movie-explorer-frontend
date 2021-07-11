@@ -108,7 +108,7 @@ function SavedMovies(props) {
                 </form>
             </section>   
             <section className="movies-cardlist">
-                {currentMovies.map((item, id)=>(
+                {JSON.parse(localStorage.movies).map((item, id)=>(
                     <Card
                         key = {id}
                         films = {item}

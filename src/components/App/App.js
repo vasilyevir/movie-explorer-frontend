@@ -33,7 +33,14 @@ function App() {
   }
 
   const addCard = (array, num) => {
-    setCurrentMovies(() => array.map(film => checkShowCard(film, num)))
+    // setCurrentMovies(() => array.map(film => checkShowCard(film, num)))/
+    const arr = [];
+    let i=0;
+    array.map(film => {
+      arr[i]=checkShowCard(film, num);
+      i++;
+    })
+    localStorage.setItem('movies', JSON.stringify(arr))
   }
   
   const determiningQuantityCard = (array) => {
@@ -59,7 +66,7 @@ function App() {
 
 
   window.onresize = function() {
-    setTimeout(determiningQuantityCard(currentMovies, quantityFilmsOnPage), 10000)
+    setTimeout(determiningQuantityCard(JSON.parse(localStorage.movies), quantityFilmsOnPage), 10000)
   };
 
 
@@ -196,6 +203,7 @@ function App() {
 
   const signOut = () =>{
     localStorage.removeItem('token');
+    localStorage.removeItem('movies');
     history.push('/signin');
     setLoggedIn(false);
   }
@@ -205,6 +213,9 @@ function App() {
       let token = localStorage.getItem('token');
       if (token){
         setLoggedIn(true)
+      }
+      if (localStorage.getItem('movies')){
+        setCurrentMovies(JSON.parse(localStorage.getItem('movies')));
       }
       api.getInformation()
         .then(data => {
@@ -233,29 +244,42 @@ function App() {
  
   function handleMovieLike(card) {
     return api.postMovies(card).then((newCard) => {
-    newCard.isLiked = true
-    newCard.isSearched = true
-    newCard.show = true
-    setCurrentMovies((state) => state.map((c) => c.movieId === card.movieId ? newCard : c));
+      newCard.isLiked = true
+      newCard.isSearched = true
+      newCard.show = true
+      setCurrentMovies((state) => state.map((c) => c.movieId === card.movieId ? newCard : c));
+
+      const arr = JSON.parse(localStorage.movies);
+      const array = []
+      let i=0;
+      arr.map(film =>{
+        array[i] = film.movieId === card.movieId ? newCard : film;
+        i++;
+      })
+      localStorage.setItem('movies', JSON.stringify(array))
+      console.log(JSON.parse(localStorage.movies))
+
+
     })
     .catch((err)=>{console.log(err)}) 
   }
 
   function handleMovieDeleteLike(cardId) {
     return api.deleteMovies(cardId).then((newCard) => {
-      console.log(newCard)
+      const array = JSON.parse(localStorage.movies);
       let movies=[]
-      for (let i =0 ;i<currentMovies.length; i++){
-        if (currentMovies[i].movieId === newCard.movieId){
+      for (let i =0 ;i<array.length; i++){
+        if (array[i].movieId === newCard.movieId){
           movies[i] = newCard
           movies[i].isLiked = false
           movies[i].isSearched = true
           movies[i].show = true
         } else {
-          movies[i] = currentMovies[i]
+          movies[i] = array[i]
         }
       }
       setCurrentMovies(movies);
+      localStorage.setItem('movies', JSON.stringify(movies))
     })
     .catch((err)=>{console.log(err)}) 
   }
@@ -266,7 +290,7 @@ const increaseQuantityCheck = () => {
 
   const increaseQuantity = () => {
 
-    if (currentMovies.length < quantityFilmsOnPage + quantityAddCardOnPage){
+    if (JSON.parse(localStorage.movies).length < quantityFilmsOnPage + quantityAddCardOnPage){
       setRemoveButton(true);
     }
     const movieQuantity = quantityFilmsOnPage + quantityAddCardOnPage;
@@ -277,8 +301,10 @@ const increaseQuantityCheck = () => {
   const handleFilterButtonClick = (nameFilm, shortFilm) => {
     const movie = []
     let i = 0;
+    const array = JSON.parse(localStorage.movies);
+    array.map(film => film.isSearched = false)
     setCurrentMovies(movie => movie.map(film => film.isSearched = false))
-    currentMovies.forEach(film => {
+    array.forEach(film => {
       if (shortFilm){
         movie[i] = film;
         if(film.duration < 41){
@@ -299,11 +325,14 @@ const increaseQuantityCheck = () => {
       i++;
    })
    setCurrentMovies(movie)
+   localStorage.setItem('movies', JSON.stringify(movie))
+  //  console.log(JSON.parse(localStorage.movies), 1);
+
   }
 
   const closeAllPopups = () => {
     setIsOpen(false);
-}
+  }
 
   return (
     <div className="root">
@@ -328,8 +357,8 @@ const increaseQuantityCheck = () => {
             <ProtectedRoute path='/movies'
               component={Movies}
               loggedIn={loggedIn}
-              moviesList={currentMovies}
               cardLike={handleMovieLike}
+              moviesList={currentMovies}
               deleteLike={handleMovieDeleteLike}
               filterMovie={handleFilterButtonClick}
               increaseQuantity={increaseQuantityCheck}

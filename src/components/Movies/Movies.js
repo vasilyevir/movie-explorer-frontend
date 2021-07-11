@@ -40,6 +40,13 @@ function Movies(props) {
       const addCardOnList = () => {
         increaseQuantity();
         setCurrentMovies(state => state.map(film => checkShowCard(film)))
+        const array = [];
+        let i =0;
+        JSON.parse(localStorage.movies).map(film => {
+            array[i] = checkShowCard(film)
+            i++;
+        })
+        localStorage.setItem('movies', JSON.stringify(array))
       }
 
     const handleChangeCheckbox = (e) => {
@@ -125,6 +132,7 @@ function Movies(props) {
                 cardLike = {props.cardLike}
                 nameFilm={nameFilm}
                 shortFilm={shortFilm}
+                moviesList={currentMovies}
             />
             <button className={props.removeButton ? "movies-cardlist__button movies-cardlist__button_invisible" : "movies-cardlist__button"} onClick={addCardOnList}>Ещё</button>
             <Footer/>

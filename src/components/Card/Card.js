@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom';
 import './Card.css';
 
 
 function Card(props) {
-    // const movieShow = props.savedMovies ? true : !props.nameFilm ? !props.shortFilm ? true : props.films.isSearched ? true : false : false ;
+    const durationHours =(props.films.duration - props.films.duration % 60)/60 + 'ч';
+    const durationMinutes = props.films.duration % 60 + 'м';
     let movieShow;
     if (props.savedMovies){
         //сохраненные фильмы
@@ -99,6 +99,8 @@ function Card(props) {
     const handleCardLike = () => {
         props.like(props.films)
         .catch(err => console.log(err));
+        // localStorage.setItem('movies', JSON.stringify(currentMovies))
+        // console.log(currentMovies, 'like card', JSON.parse(localStorage.movies))
     }
 
     const handleCardDeleteLike = () => {
@@ -119,7 +121,7 @@ function Card(props) {
                 }
             </div>
             <div className="card__constructor-time">
-                <p className="card__film-length">{props.films.duration}</p>
+                <p className="card__film-length">{durationHours === '0ч' ?  `${durationMinutes}` : `${durationHours} ${durationMinutes}`}</p>
             </div>
         </div>
     )
