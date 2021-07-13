@@ -122,6 +122,7 @@ function App() {
         if (data.token) {
           setLoggedIn(true)
           localStorage.setItem('token', data.token)
+          localStorage.setItem('isOpen', true);
           api.getMovies()
             .then(data => {
               const savedMoviesList = data.data

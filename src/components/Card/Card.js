@@ -59,38 +59,49 @@ function Card(props) {
             }
         }
     } else {
-        if (props.nameFilm){
-            //задан поиск
-            if (props.shortFilm) {
-                //задан
-                if (props.films.isSearched){
-                    // найден
-                    movieShow = true;
-                } else {
-                    movieShow = false;
-                }
+        if (props.isOpen) {
+            // после открытия страницы
+            if (props.films.isSearched){
+                // найден
+                movieShow = true;
             } else {
-                if (props.films.isSearched){
-                    // найден
-                    movieShow = true;
-                } else {
-                    movieShow = false;
-                }
+                movieShow = false;
             }
+
         } else {
-            if (props.shortFilm) {
-                //задан
-                if (props.films.isSearched){
-                    // найден
-                    movieShow = true;
+            if (props.nameFilm){
+                //задан поиск
+                if (props.shortFilm) {
+                    //задан
+                    if (props.films.isSearched){
+                        // найден
+                        movieShow = true;
+                    } else {
+                        movieShow = false;
+                    }
                 } else {
-                    movieShow = false;
+                    if (props.films.isSearched){
+                        // найден
+                        movieShow = true;
+                    } else {
+                        movieShow = false;
+                    }
                 }
             } else {
-                if (props.films.show){
-                    movieShow = true;
+                if (props.shortFilm) {
+                    //задан
+                    if (props.films.isSearched){
+                        // найден
+                        movieShow = true;
+                    } else {
+                        movieShow = false;
+                    }
                 } else {
-                    movieShow = false;
+                    if (props.films.show){
+                        movieShow = true;
+                    } else {
+                        movieShow = false;
+                    }
                 }
             }
         }

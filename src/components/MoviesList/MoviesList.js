@@ -15,6 +15,7 @@ function MoviesList(props) {
                     like = {props.cardLike}
                     savedMovies = {false}
                     deleteLike={props.deleteLike}
+                    // isOpen={}
                 />
             )
             )}
