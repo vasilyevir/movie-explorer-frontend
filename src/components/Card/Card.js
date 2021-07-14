@@ -59,7 +59,8 @@ function Card(props) {
             }
         }
     } else {
-        if (props.isOpen) {
+        console.log(localStorage.isOpen)
+        if (localStorage.isOpen) {
             // после открытия страницы
             if (props.films.isSearched){
                 // найден
@@ -67,7 +68,6 @@ function Card(props) {
             } else {
                 movieShow = false;
             }
-
         } else {
             if (props.nameFilm){
                 //задан поиск

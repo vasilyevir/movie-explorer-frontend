@@ -122,7 +122,7 @@ function App() {
         if (data.token) {
           setLoggedIn(true)
           localStorage.setItem('token', data.token)
-          localStorage.setItem('isOpen', true);
+          localStorage.setItem('isOpen', false);
           api.getMovies()
             .then(data => {
               const savedMoviesList = data.data
@@ -302,6 +302,11 @@ const increaseQuantityCheck = () => {
   const handleFilterButtonClick = (nameFilm, shortFilm) => {
     const movie = []
     let i = 0;
+    if (nameFilm || shortFilm) {
+      localStorage.setItem('isOpen', true);      
+    } else {
+      localStorage.setItem('isOpen', false);
+    }
     const array = JSON.parse(localStorage.movies);
     array.map(film => film.isSearched = false)
     setCurrentMovies(movie => movie.map(film => film.isSearched = false))
