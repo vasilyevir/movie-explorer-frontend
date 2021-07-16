@@ -1,0 +1,8 @@
+.popup__btn-save_invalid{
+    border: 1px #000000 solid;
+    background-color: #E5E5E5;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    opacity: 0.2;
+}

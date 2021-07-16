@@ -1,0 +1,15 @@
+.popup__window_type_image{
+    margin: auto;
+    grid-template-columns:  minmax(min-content, max-content) 30px;
+    grid-template-rows: 30px minmax(min-content, max-content);
+}
+
+@media (max-width: 478px){
+.popup__window_type_image{
+    position: relative;
+    display: grid;
+    margin: auto;
+    grid-template-columns:  minmax(min-content, max-content) 26px;
+    grid-template-rows: 26px minmax(min-content, max-content);
+}
+}

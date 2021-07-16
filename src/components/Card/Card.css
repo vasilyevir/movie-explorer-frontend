@@ -1,4 +1,5 @@
 @import '../../blocks/card/card.css';
+@import '../../blocks/card/_invisible/card_invisible.css';
 @import '../../blocks/card/__button-like/card__button-like.css';
 @import '../../blocks/card/__film-length/card__film-length.css';
 @import '../../blocks/card/__image/card__image.css';

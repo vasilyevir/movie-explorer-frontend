@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.392b1809.chunk.css",
+    "main.js": "/static/js/main.d6de19c5.chunk.js",
+    "main.js.map": "/static/js/main.d6de19c5.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.0734dba5.js",
+    "runtime-main.js.map": "/static/js/runtime-main.0734dba5.js.map",
+    "static/js/2.34fc1829.chunk.js": "/static/js/2.34fc1829.chunk.js",
+    "static/js/2.34fc1829.chunk.js.map": "/static/js/2.34fc1829.chunk.js.map",
+    "static/js/3.2f8885b0.chunk.js": "/static/js/3.2f8885b0.chunk.js",
+    "static/js/3.2f8885b0.chunk.js.map": "/static/js/3.2f8885b0.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.392b1809.chunk.css.map": "/static/css/main.392b1809.chunk.css.map",
+    "static/js/2.34fc1829.chunk.js.LICENSE.txt": "/static/js/2.34fc1829.chunk.js.LICENSE.txt",
+    "static/media/Avatar.044f0245.jpeg": "/static/media/Avatar.044f0245.jpeg",
+    "static/media/Movies.css": "/static/media/CloseIcon.09da0492.svg",
+    "static/media/index.css": "/static/media/Inter-Regular.e148c4a1.woff",
+    "static/media/account.3f38247f.svg": "/static/media/account.3f38247f.svg",
+    "static/media/arrow.093d837f.svg": "/static/media/arrow.093d837f.svg",
+    "static/media/Card.css": "/static/media/like.25b2264a.svg",
+    "static/media/logo.2c9dd0bb.svg": "/static/media/logo.2c9dd0bb.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0734dba5.js",
+    "static/js/2.34fc1829.chunk.js",
+    "static/css/main.392b1809.chunk.css",
+    "static/js/main.d6de19c5.chunk.js"
+  ]
+}
